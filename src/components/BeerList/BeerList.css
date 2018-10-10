@@ -48,3 +48,23 @@
 .beerItem .beerTag {
   color: lightgrey;
 }
+
+.beerList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+
+.beerList button {
+  background: none;
+  border: 3px solid #FECE4B;
+  border-radius: 5px;
+  color: #FECE4B;
+  display: inline-flex;
+  font-size: 10px;
+  font-weight: bold;
+  margin: 10px;
+  padding: 10px;
+  text-transform: uppercase;
+}

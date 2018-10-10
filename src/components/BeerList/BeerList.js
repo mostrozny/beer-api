@@ -42,15 +42,17 @@ class BeerList extends Component {
 
   handleClick = (event) => {
         const type = event.target.innerText;
-         const page = this.state.page;
-        if (page > 0 || page < 19) {
-            if (type == "Prev") {
-                this.setState({
-                    page: page-1,
-                })
-            } else if (type == "Next") {
+
+        const page = Number(this.state.page);
+
+         if (page >= 2 || page < 19) {
+            if (type === "NEXT") {
                 this.setState({
                     page: page+1,
+                })
+            } else if (type === "PREV") {
+                this.setState({
+                    page: page-1,
                 })
             }
         }
@@ -85,8 +87,10 @@ class BeerList extends Component {
               <ul className="beers">
                   {beerListMap}
               </ul>
-              <button onClick={this.handleClick}>Prev</button>
-              <button onClick={this.handleClick}>Next</button>
+              <div>
+                  <button onClick={this.handleClick}>Prev</button>
+                  <button onClick={this.handleClick}>Next</button>
+              </div>
           </div>
        );
   }
