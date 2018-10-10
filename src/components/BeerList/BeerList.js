@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './BeerList.css';
+import Redirect from "react-router-dom/es/Redirect";
 
 class BeerList extends Component {
     constructor(props) {
@@ -19,6 +20,7 @@ class BeerList extends Component {
             .then( arr => {
                 const beers = arr.map(function (drink) {
                     const beer = {
+                        id: drink.id,
                         image : drink.image_url,
                         name : drink.name,
                         tagline : drink.tagline,
@@ -32,12 +34,9 @@ class BeerList extends Component {
             })
     }
 
-  componentDidMount() {
-
-  }
-
-  componentWillUnmount() {
-
+  handleClickItem = (id) => {
+       // return <Redirect to="/BeerSpecs"/>
+      this.props.history.push(`/BeerSpecs/${id}`);
   }
 
   handleClick = (event) => {
@@ -64,7 +63,7 @@ class BeerList extends Component {
       const beerList = this.state.beers;
       const beerListMap = beerList.map((drink, index) => {
           return (
-                       <li key={index} className="beerItem">
+                       <li key={index} onClick={() => this.handleClickItem(drink.id)} className="beerItem">
                           <div className="container">
                                 <div className="image">
                                 <img src={drink.image} />
