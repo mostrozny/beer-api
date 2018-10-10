@@ -41,6 +41,7 @@ class BeerSpecs extends Component {
 
   render() {
         const beer = this.state.beers;
+      const food = JSON.stringify(beer.food_pairing);
         console.log(beer)
        return (
           <div className="beerSpecs">
@@ -52,19 +53,21 @@ class BeerSpecs extends Component {
                 <div>
                     <h2>{beer.name}</h2>
                     <span className="small">{beer.tagline}</span>
+                    <hr />
                 </div>
                 <div>
                     <div className="voltage">
-                        IBU: {beer.ibu}
-                        ABV: {beer.abv}
-                        EBC: {beer.ebc}
+                        <span><b>IBU:</b> {beer.ibu}</span>
+                        <span><b>ABV:</b> {beer.abv}</span>
+                        <span><b>EBC:</b> {beer.ebc}</span>
                     </div>
                 </div>
                 <div className="description">
                     {beer.description}
                 </div>
                 <div className="served">
-                    {beer.food_pairing}
+                    <p>Best served with:</p>
+                    {}
                 </div>
               </div>
           </div>

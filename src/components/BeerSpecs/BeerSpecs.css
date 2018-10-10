@@ -14,16 +14,38 @@
 
 .beerSpecs .content {
     width: 70%;
+    color: grey;
 }
 
 .content h2 {
-    color: grey;
     padding-top: 10px;
     padding-bottom: 10px;
     font-size: 25px;
 }
 
 .content .small {
-    color: grey;
     font-size: 20px;
+}
+
+.content hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: none;
+    width: 70px;
+    height: 5px;
+    background-color: #FECE4B;
+}
+
+.content .voltage {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.content .voltage span {
+    padding-right: 15px;
+}
+
+.content .served {
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
