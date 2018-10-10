@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './BeerList.css';
-import Redirect from "react-router-dom/es/Redirect";
 
 class BeerList extends Component {
     constructor(props) {
@@ -12,7 +11,6 @@ class BeerList extends Component {
          beers: [],
         }
     }
-
 
     getBeers() {
         fetch(`https://api.punkapi.com/v2/beers?page=${this.state.page}&per_page=${this.state.per_page}`)
@@ -35,7 +33,6 @@ class BeerList extends Component {
     }
 
   handleClickItem = (id) => {
-       // return <Redirect to="/BeerSpecs"/>
       this.props.history.push(`/BeerSpecs/${id}`);
   }
 
