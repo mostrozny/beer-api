@@ -1,2 +1,3 @@
 # Beer API
-## react app
+### JS, react, fetch
+## React app connected with https://punkapi.com/ 
